@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root {
+    --gray: #343a40;
+    --button-text-color: #087f5b;
+    --background-color: #e6fcf5;
+    --button-light: #c3fae8;
+    --button-regular: #96f2d7;
+    --button-median: #63e6be;
+    --button-dark: #0ca678;
+}
+html {
+    font-size: 62.5%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    font-family: "Poppins", sans-serif;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--gray);
+}
+
+#calculator {
+    width: 40rem;
+    border-radius: 2rem;
+    overflow: hidden;
+    background-color: var(--background-color);
+}
+
+#screen {
+    height: 20rem;
+    background-color: var(--button-regular);
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 2rem;
+}
+
+.formula,
+.latest-button {
+    flex: 1;
+    line-height: 1;
+    color: var(--button-text-color);
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.formula {
+    font-size: 4.6rem;
+}
+
+.latest-button {
+    font-size: 8.6rem;
+}
+
+/* Button */
+
+.button-block {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 1rem;
+    column-gap: 1rem;
+    padding: 3rem 1.5rem 1.5rem;
+    font-weight: 500;
+}
+
+.button {
+    user-select: none;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    font-size: 2.4rem;
+    padding: 2rem 3rem;
+    border-radius: 2.4rem;
+    color: var(--button-text-color);
+    transition: all 0.2s;
+}
+
+.button:active {
+    transform: translateY(5%);
+    /* transform: scale(105%); */
+}
+
+.light-button {
+    background-color: var(--button-light);
+}
+.dark-button {
+    background-color: var(--button-regular);
+}
+
+.ac-button {
+    color: white;
+    background-color: var(--button-dark);
+    grid-column: span 2;
+}
+
+.equal-button {
+    grid-row: span 2;
+}
+
+.zero-button {
+    grid-column: span 2;
+}
+
+.button:hover {
+    color: white;
+    background-color: var(--button-dark);
+}
+
+.ac-button:hover {
+    opacity: 0.8;
+}
+
+@media only screen and (max-width: 48em) {
+    html {
+        font-size: 50%;
+    }
+}
+
+@media only screen and (max-width: 24em) {
+    html {
+        font-size: 40%;
+    }
+}
